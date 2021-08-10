@@ -395,3 +395,57 @@ isPP(5) => None
 # print(isPP(4))
 # print(isPP(9))
 # print(isPP(5))
+
+"""
+Mueva la primera letra de cada palabra al final, luego agregue "ay" al final de la palabra. 
+Deje los signos de puntuación intactos.
+
+Ejemplos de
+pig_it('Pig latin is cool') # igPay atinlay siay oolcay
+pig_it('Hello world !')     # elloHay orldway !
+"""
+# def pig_it(text:str):
+#     new_text = ""
+#     for string in text.split(" "):
+#         new_text += string[1:]+string[0]+"ay"+" "
+#     if "!" in string or "?" in string:
+#         return new_text[0:len(new_text)-3]
+#     if new_text[-1] == " ":
+#         return new_text[0:-1]
+#     return new_text
+
+# print(pig_it('elloHay orldway !'))
+
+"""
+¿Qué es un anagrama? Bueno, dos palabras son anagramas entre sí si ambas contienen las mismas letras. Por ejemplo:
+
+'abba' & 'baab' == true
+
+'abba' & 'bbaa' == true
+
+'abba' & 'abbba' == false
+
+'abba' & 'abca' == false
+Escribe una función que encuentre todos los anagramas de una palabra de una lista. Se le darán dos entradas, una palabra y una matriz con palabras. Debe devolver una matriz de todos los anagramas o una matriz vacía si no hay ninguno. Por ejemplo:
+
+anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) => ['aabb', 'bbaa']
+
+anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']) => ['carer', 'racer']
+
+anagrams('laser', ['lazing', 'lazy',  'lacer']) => []
+"""
+
+def anagrams(word, words):
+    values_anagrams = list()
+    anagrams1 = 0
+    p_word = sum([ord(x) for x in word])
+    for word1 in words:
+        for w in word1:
+            anagrams1 += ord(w)
+        if p_word == anagrams1: values_anagrams.append(word1)
+        anagrams1 = 0
+    return values_anagrams
+
+print(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']))
+print(anagrams('laser', ['lazing', 'lazy',  'lacer']))
+print(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']))
