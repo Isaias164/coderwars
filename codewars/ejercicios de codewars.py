@@ -434,18 +434,61 @@ anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']) => ['carer', '
 
 anagrams('laser', ['lazing', 'lazy',  'lacer']) => []
 """
+# def anagrams(word, words):
+#     values_anagrams = list()
+#     anagrams1 = 0
+#     p_word = sum([ord(x) for x in word])
+#     for word1 in words:
+#         for w in word1:
+#             anagrams1 += ord(w)
+#         if p_word == anagrams1: values_anagrams.append(word1)
+#         anagrams1 = 0
+#     return values_anagrams
 
-def anagrams(word, words):
-    values_anagrams = list()
-    anagrams1 = 0
-    p_word = sum([ord(x) for x in word])
-    for word1 in words:
-        for w in word1:
-            anagrams1 += ord(w)
-        if p_word == anagrams1: values_anagrams.append(word1)
-        anagrams1 = 0
-    return values_anagrams
+# print(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']))
+# print(anagrams('laser', ['lazing', 'lazy',  'lacer']))
+# print(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']))
 
-print(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']))
-print(anagrams('laser', ['lazing', 'lazy',  'lacer']))
-print(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']))
+# Moving Zeros To The End 5 kyu
+"""
+Escribe un algoritmo que tome una matriz y mueva todos los ceros al final, preservando el orden de los otros elementos.
+
+move_zeros([1, 0, 1, 2, 0, 1, 3]) # returns [1, 1, 2, 1, 3,0,0]
+"""
+
+# def move_zeros(array:list):
+#     a = array
+#     for i in array:
+#         if i == 0:
+#             a.remove(0)
+#             a.append(0)
+#     return a
+
+# print(move_zeros([1, 0, 1, 2, 0, 1, 3]))
+
+
+
+#Convierta la cadena PascalCase en snake_case 5 kyu
+"""
+Complete la función / método para que tome una CamelCasecadena y devuelva la cadena en snake_casenotación. 
+Los caracteres en minúscula pueden ser números. Si el método obtiene un número como entrada, debería devolver una cadena.
+Ejemplos de
+"TestController"  -->  "test_controller"
+"MoviesAndBooks"  -->  "movies_and_books"
+"App7Test"        -->  "app7_test"
+1                 -->  "1"
+"""
+# def to_underscore(string:str):
+#     if isinstance(string,int): return str(string)
+#     from re import sub,findall
+#     l = findall(r"[A-Z]",string)[1:]
+#     for i in l:
+#         string=  sub(i,"_"+i,string)
+#     return string.lower()
+
+# print(to_underscore("TestController"))
+# print(to_underscore("MoviesAndBooks"))
+# print(to_underscore("App7Test"))
+# print(to_underscore("1"))
+
+#Ayudante de números romanos 4 kyu
