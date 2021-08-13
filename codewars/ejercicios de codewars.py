@@ -492,3 +492,83 @@ Ejemplos de
 # print(to_underscore("1"))
 
 #Ayudante de números romanos 4 kyu
+
+"""
+Cree una clase RomanNumerals que pueda convertir un número romano en un valor entero. Debe seguir la API que se muestra en los ejemplos siguientes. 
+Se probarán varios valores de números romanos para cada método auxiliar.
+
+Los números romanos modernos se escriben expresando cada dígito por separado comenzando con el dígito más a la izquierda y omitiendo cualquier dígito con un valor de cero. En números romanos se traduce 1990: 1000 = M, 900 = CM, 90 = XC; resultando en MCMXC. 2008 se escribe como 2000 = MM, 8 = VIII; o MMVIII. 1666 usa cada símbolo romano en orden descendente: MDCLXVI.
+
+En este kata 4debe representarse como IV, NO como IIII(los "cuatro del relojero").
+
+Ejemplos de
+RomanNumerals.to_roman(1000) # should return 'M'
+RomanNumerals.from_roman('M') # should return 1000
+Ayuda
+Símbolo	Valor
+I	1
+IV	4
+V	5
+X	10
+L	50
+C	100
+D	500
+Mil	1000
+"""
+
+# def invest(*my_dict:dict):
+#         new_dict = {}
+#         for d in my_dict:
+#             for k in d.keys():
+#                 new_dict[d[k]] = k
+#         return new_dict
+# class RomanNumerals:
+#     one_digits = {0:"",1:"I",2:"II",3:"III",4:"IV",5:"V",6:"VI",7:"VII",8:"VIII",9:"IX"}
+#     two_digits = {10:"X",40:"XL",50:"L",90:"XC"}
+#     three_digits = {100:"C",500:"D",900:"CM"}
+#     four_digits = {1000:"M"}
+
+#     @staticmethod
+#     def to_roman(num_decimal:int):
+#         num_decimal = str(num_decimal)
+#         value_roman = ""
+#         if len(num_decimal) == 4:
+#             value_roman += RomanNumerals.four_digits[int("1"+"0"*3)] * int(num_decimal[0])
+#             num_decimal = num_decimal[1:] 
+#         if len(num_decimal) == 3:
+#             n =  100 if int(num_decimal) >= 100 and int(num_decimal) <= 300 else 500 if num_decimal == 500  else 900
+#             if not n == 0:
+#                 value_roman += RomanNumerals.three_digits[n] * (int(num_decimal[0]+"00") // n)
+#             num_decimal = num_decimal[1:]
+#         if len(num_decimal) == 2:
+#             n = 10 if int(num_decimal) >= 10 and int(num_decimal) <= 30 else 40 if num_decimal == 40  else 50 if num_decimal == 50  and num_decimal <= 80 else 90
+#             if not n == 0:
+#                 value_roman += RomanNumerals.two_digits[n]* ((int(num_decimal[0]+"0")) // n)
+#             num_decimal = num_decimal[1:]
+#         if len(num_decimal) == 1:
+#             n = int(num_decimal[0])
+#             if not n == 0:
+#                 value_roman += RomanNumerals.one_digits[n] 
+#         return value_roman
+
+#     @staticmethod
+#     def from_roman(number_roman):
+#         n_roman = invest(RomanNumerals.one_digits,RomanNumerals.two_digits,RomanNumerals.three_digits,RomanNumerals.four_digits)
+#         count = 0
+#         index = 0
+#         if len(number_roman) == 1: return n_roman[number_roman[0]] 
+#         while index < len(number_roman):
+#             if n_roman[number_roman[index]] < n_roman[number_roman[index+1 if index < len(number_roman)-1 else len(number_roman)-1]]:
+#                 count += n_roman[number_roman[index+1]] - n_roman[number_roman[index]]
+#                 index += 2
+#             else:
+#                 count += n_roman[number_roman[index]]
+#                 index += 1
+#         return count
+
+#print(RomanNumerals.inverti(RomanNumerals.three_digits))
+# print(RomanNumerals.to_roman(1990))#990 = "CMXC" ,1990 ='MCMXC'
+# print(RomanNumerals.to_roman(2008))#2008 = MMVIII
+# print(RomanNumerals.from_roman("IV"))
+# print(RomanNumerals.from_roman("XXI"))
+# print(RomanNumerals.from_roman("MMVIII"))
