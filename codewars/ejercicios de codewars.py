@@ -517,11 +517,11 @@ Mil	1000
 """
 
 # def invest(*my_dict:dict):
-#         new_dict = {}
-#         for d in my_dict:
-#             for k in d.keys():
-#                 new_dict[d[k]] = k
-#         return new_dict
+#     new_dict = {}
+#     for d in my_dict:
+#         for k in d.keys():
+#             new_dict[d[k]] = k
+#     return new_dict
 # class RomanNumerals:
 #     one_digits = {0:"",1:"I",2:"II",3:"III",4:"IV",5:"V",6:"VI",7:"VII",8:"VIII",9:"IX"}
 #     two_digits = {10:"X",40:"XL",50:"L",90:"XC"}
@@ -536,14 +536,17 @@ Mil	1000
 #             value_roman += RomanNumerals.four_digits[int("1"+"0"*3)] * int(num_decimal[0])
 #             num_decimal = num_decimal[1:] 
 #         if len(num_decimal) == 3:
-#             n =  100 if int(num_decimal) >= 100 and int(num_decimal) <= 300 else 500 if num_decimal == 500  else 900
+#             n =  100 if int(num_decimal) >= 100 and int(num_decimal) <= 300 else 500 if int(num_decimal) >= 500 and int(num_decimal) <=800  else 900
 #             if not n == 0:
 #                 value_roman += RomanNumerals.three_digits[n] * (int(num_decimal[0]+"00") // n)
 #             num_decimal = num_decimal[1:]
 #         if len(num_decimal) == 2:
-#             n = 10 if int(num_decimal) >= 10 and int(num_decimal) <= 30 else 40 if num_decimal == 40  else 50 if num_decimal == 50  and num_decimal <= 80 else 90
+#             n = 40 if int(num_decimal) >= 40 and int(num_decimal) <= 49  else 50 if int(num_decimal) >= 50  and int(num_decimal) <= 89 else 90
 #             if not n == 0:
 #                 value_roman += RomanNumerals.two_digits[n]* ((int(num_decimal[0]+"0")) // n)
+#                 n = str(int(num_decimal[0]+"0") - n)
+#             if int(num_decimal) >= 10 and int(num_decimal) <= 39 or int(n) >= 10 and int(n) <= 39:
+#                 value_roman += RomanNumerals.two_digits[10] * int(num_decimal[0] if int(n) <= 0 else int(n[0]))
 #             num_decimal = num_decimal[1:]
 #         if len(num_decimal) == 1:
 #             n = int(num_decimal[0])
@@ -566,9 +569,9 @@ Mil	1000
 #                 index += 1
 #         return count
 
-#print(RomanNumerals.inverti(RomanNumerals.three_digits))
-# print(RomanNumerals.to_roman(1990))#990 = "CMXC" ,1990 ='MCMXC'
-# print(RomanNumerals.to_roman(2008))#2008 = MMVIII
+#print(RomanNumerals.to_roman(1990))
+# print(RomanNumerals.to_roman(2008))
+#print(RomanNumerals.to_roman(47))
 # print(RomanNumerals.from_roman("IV"))
 # print(RomanNumerals.from_roman("XXI"))
 # print(RomanNumerals.from_roman("MMVIII"))
