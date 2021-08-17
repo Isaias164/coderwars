@@ -569,9 +569,29 @@ Mil	1000
 #                 index += 1
 #         return count
 
-#print(RomanNumerals.to_roman(1990))
+# print(RomanNumerals.to_roman(1990))
 # print(RomanNumerals.to_roman(2008))
-#print(RomanNumerals.to_roman(47))
+# print(RomanNumerals.to_roman(47))
 # print(RomanNumerals.from_roman("IV"))
 # print(RomanNumerals.from_roman("XXI"))
 # print(RomanNumerals.from_roman("MMVIII"))
+
+""" 
+Convertidor de cadena de hex a decimal 5 kyu
+
+Cuando se trabaja con valores de color, a veces puede resultar útil extraer los valores de los componentes rojo, verde y azul (RGB) individuales de un color. Implemente una función que cumpla con estos requisitos:
+
+Acepta una cadena de color hexadecimal que no distingue entre mayúsculas y minúsculas como parámetro (p. Ej. "#FF9933"O "#ff9933")
+Devuelve un Map <String, int> con la estructura {r: 255, g: 153, b: 51}donde r , g , y b gama de 0 a 255
+Nota: su implementación no necesita ser compatible con la forma abreviada de notación hexadecimal (es decir "#FFF")
+
+Ejemplo
+"#FF9933" --> {r: 255, g: 153, b: 51}
+"""
+def hex_string_to_RGB(hex_string:str): 
+    from re import findall
+    value_convert_int = [int(v,base=16) for v in findall(r"[A-Z,a-z,0-9]",hex_string)]
+    return {"r":(value_convert_int[0]*16)+value_convert_int[1],"g":(value_convert_int[2]*16)+value_convert_int[3],"b":(value_convert_int[4]*16)+value_convert_int[5]}
+        
+print(hex_string_to_RGB("#   FF9933"))
+print(hex_string_to_RGB("#beaded"))
