@@ -597,17 +597,7 @@ Ejemplo
 # print(hex_string_to_RGB("#beaded"))
 
 """
-En este kata, su tarea es crear una expresión regular capaz de evaluar cadenas binarias (cadenas con solo 1s y 0s) y 
-determinar si la cadena dada representa un número divisible por 3.
-
-Tenga en cuenta que:
-
-Es posible que una cadena vacía se evalúe como verdadera (no se probará, por lo que no debe preocuparse por ello, a menos que lo desee)
-La entrada debe constar solo de dígitos binarios, sin espacios, otros dígitos, caracteres alfanuméricos, etc.
-Puede haber 0s iniciales .
-"""
-
-"""
+Parseador de enteros recargado - 4kyu
 En este kata queremos convertir una cadena en un entero. Las cadenas simplemente representan los números en palabras.
 
 Ejemplos:
