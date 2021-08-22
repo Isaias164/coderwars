@@ -588,10 +588,69 @@ Nota: su implementación no necesita ser compatible con la forma abreviada de no
 Ejemplo
 "#FF9933" --> {r: 255, g: 153, b: 51}
 """
-def hex_string_to_RGB(hex_string:str): 
-    from re import findall
-    value_convert_int = [int(v,base=16) for v in findall(r"[A-Z,a-z,0-9]",hex_string)]
-    return {"r":(value_convert_int[0]*16)+value_convert_int[1],"g":(value_convert_int[2]*16)+value_convert_int[3],"b":(value_convert_int[4]*16)+value_convert_int[5]}
+# def hex_string_to_RGB(hex_string:str): 
+#     from re import findall
+#     value_convert_int = [int(v,base=16) for v in findall(r"[A-Z,a-z,0-9]",hex_string)]
+#     return {"r":(value_convert_int[0]*16)+value_convert_int[1],"g":(value_convert_int[2]*16)+value_convert_int[3],"b":(value_convert_int[4]*16)+value_convert_int[5]}
         
-print(hex_string_to_RGB("#   FF9933"))
-print(hex_string_to_RGB("#beaded"))
+# print(hex_string_to_RGB("#   FF9933"))
+# print(hex_string_to_RGB("#beaded"))
+
+"""
+En este kata, su tarea es crear una expresión regular capaz de evaluar cadenas binarias (cadenas con solo 1s y 0s) y 
+determinar si la cadena dada representa un número divisible por 3.
+
+Tenga en cuenta que:
+
+Es posible que una cadena vacía se evalúe como verdadera (no se probará, por lo que no debe preocuparse por ello, a menos que lo desee)
+La entrada debe constar solo de dígitos binarios, sin espacios, otros dígitos, caracteres alfanuméricos, etc.
+Puede haber 0s iniciales .
+"""
+
+"""
+En este kata queremos convertir una cadena en un entero. Las cadenas simplemente representan los números en palabras.
+
+Ejemplos:
+
+"uno" => 1
+"veinte" => 20
+"doscientos cuarenta y seis" => 246
+"setecientos ochenta y tres mil novecientos diecinueve" => 783919
+Notas adicionales:
+
+El número mínimo es "cero" (inclusive)
+El número máximo que debe admitirse es 1 millón (inclusive)
+El "y" en, por ejemplo, "ciento veinticuatro" es opcional, en algunos casos está presente y en otros no
+Todos los números probados son válidos, no es necesario validarlos
+"""
+
+# def parse_int(string:str):
+#     dicts = {"zero":0,"one":1,"two":2,"three":3,"four":4,"five":5,"six":6,"seven":7,"eight":8,"nine":9,"ten":10,"eleven":11,"twelve":12,"twenty":20}
+#     ne = 0
+#     string = string.replace("-"," ").split()
+#     for i in range(len(string)):
+#         if string[i] == "million":
+#             ne += (1000000 * dicts[string[i-1]]) - dicts[string[i-1]]
+#         #unidades de mill
+#         if string[i] == "thousand":
+#             if string[i-1] == "hundred":
+#                 ne += (1000 * ne) - (100 * dicts[string[0]])
+#             else:
+#                 ne *= 1000
+#         #unidades de 100
+#         if string[i] == "hundred":
+#             ne += (100 * dicts[string[i-1]]) - dicts[string[i-1]]
+#         #unidades de 20 a 99
+#         if "teen" in string[i]:
+#             ne += 13 if string[i] == "thirteen" else 15 if string[i] == "fifteen" else 18 if string[i] == "eighteen" else 10 + dicts[string[i][0:len(string[i])-4]]
+#         if "ty" in string[i] and not string[i] in dicts:
+#             ne += 30 if string[i] == "thirty" else 40 if string[i] == "forty" else 50 if string[i] == "fifty" else 80 if string[i] == "eighty" else dicts[string[i][0:len(string[i])-2]] * 10
+#         if string[i] in dicts:
+#             ne += dicts[string[i]]
+#     return ne
+
+#print(parse_int("twenty-six thousand three hundred fifty-nine"))
+#print(parse_int('nine hundred thousand twenty one')) #900021
+#print(parse_int("seven hundred eighty-three thousand nine hundred and nineteen"))#"783919"
+#print(parse_int('three hundred sixty-six'))
+#print(parse_int('seven hundred thousand'))
